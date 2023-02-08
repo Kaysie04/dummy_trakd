@@ -36,15 +36,15 @@ public class NewHire implements Serializable {
 	@Column(name = "salary")
 	private String salary;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id")
 	private Address address;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "manager_id")
 	private Manager manager;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "dept_id")
 	private Dept dept;
 
