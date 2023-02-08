@@ -3,7 +3,7 @@ package com.kanderson.dummy_trakd.NewHire;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.catalina.Manager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,20 +46,19 @@ public class NewHireService {
 	}
 	
 //	public NewHire addManager(Long nhId, Long managerId){
-//		Optional<NewHire> nhOptional = nhRepository.findById(nhId);
-//		Optional<Manager> managerOptional = managerRepository.findById(managerId);
-//		
-//		if(nhOptional.isPresent()) {
-//			NewHire nh = nhOptional.get();
-//			Manager manager = managerOptional.get();
-//			nh.setManager(manager);
-//			return nhRepository.save(nh);
-//		} else {
-//			return null;
-//		}	
-	
-//	}
-	
+//	Optional<NewHire> nhOptional = nhRepository.findById(nhId);
+//	Optional<Manager> managerOptional = managerRepository.findById(managerId);
+//	
+//	if(nhOptional.isPresent()) {
+//		NewHire nh = nhOptional.get();
+//		Manager manager = managerOptional.get();
+//		nh.setManager(manager);
+//		return nhRepository.save(nh);
+//	} else {
+//		return null;
+//	}		
+//
+//}
 	
 	
 }
