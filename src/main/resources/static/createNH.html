@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trakd.Create-New-Hire-Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "createNH.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Trakd</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="form-two-cards" class="container-fluid h-100">
+    <form class="d-flex flex-row h-80">
+      <div class="card w-50">
+        
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name"></label>
+            <input type="text" class="form-control" id="name" placeholder="First and Last Name">
+          </div>
+          <div class="form-group">
+            <label for="phone-number"></label>
+            <input type="text" class="form-control" id="phone-number" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <label for="street"></label>
+            <input type="text" class="form-control" id="street" placeholder="Street">
+          </div>
+          <div class="form-group">
+            <label for="city"></label>
+            <input type="text" class="form-control" id="city" placeholder="City">
+          </div>
+          <div class="form-group">
+            <label for="state"></label>
+            <input type="text" class="form-control" id="state" placeholder="State">
+          </div>
+          <div class="form-group">
+            <label for="zipcode"></label>
+            <input type="text" class="form-control" id="zipcode" placeholder="Zipcode">
+          </div>
+        </div>
+      </div>
+
+      <!--Beginning of second part of form-->
+
+      <div class="card w-50">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputName"></label>
+            <input type="text" class="form-control" id="initials" placeholder="Initials">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputName"></label>
+            <input type="password" disabled="disabled"  class="form-control" id="password" placeholder="Input is disabled">
+          </div>
+
+        <div>
+          <label for="job-dropdown"></label>
+          <select class = "dropdown" id="job-dropdown">
+            <option value = null>Set Job Title</option>
+            <option value = "Software Engineer">Software Engineer</option>
+          </select>
+        </div>
+
+          
+        <div>
+          <label for="salary-dropdown"></label>
+          <select class = "dropdown" id="salary-dropdown">
+            <option value = null>Set Salary</option>
+            <option value = "73000">$73,000</option>
+            <option value = "75000">$75,000</option>
+            <option value = "77000">$77,000</option>
+            <option value = "79000">$79,000</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="dept-dropdown"></label>
+          <select class = "dropdown" id="dept-dropdown">
+            <option value = null>Select Department</option>
+            <option value = "1">Front-End</option>
+            <option value = "2"> Back-End</option>
+            <option value = "3">QA</option>
+            <option value = "4">Security</option>
+            <option value = "5">Data</option>
+          </select>
+        </div>
+
+
+         <div>
+          <label for="manager-dropdown"></label>
+          <select class = "dropdown" id="manager-dropdown">
+            <option value = null>Select Manager</option>
+            <option value = "1">Sarah Lee: Front-End</option>
+            <option value = "4">Michael Donnelly: Back-End</option>
+            <option value = "2">Richard Hastings: QA</option>
+            <option value = "5">Amber Pearl: Security</option>
+            <option value = "1">Chris Nobles: Data</option>
+          </select>
+        </div>
+
+
+      </div>
+      </div>
+      <div>
+      </div>
+    </form>
+    <button id="submit-btn" class="btn btn-primary text-uppercase" type="submit">Submit New Profile</button>
+  </div>
+  
+
+
+
+  
+
+  
+ 
+  <script src="createNH.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"></script>
+</body>
+</html>
+
+
