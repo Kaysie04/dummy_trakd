@@ -15,7 +15,7 @@ public class Admin implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "name")
 	private String name;
@@ -40,7 +40,7 @@ public class Admin implements Serializable {
 		this.password = password;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	

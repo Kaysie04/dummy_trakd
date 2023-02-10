@@ -13,7 +13,7 @@ public class Dept implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(name = "name")
 	private String name;
@@ -27,7 +27,7 @@ public class Dept implements Serializable {
 		this.name = name;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -10,10 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.kanderson.dummy_trakd.Dept.Dept;
 
 @RestController
 @RequestMapping("/newhire")
@@ -28,44 +31,35 @@ public class NewHireController {
 	
 	@GetMapping("/all")
 	public List<NewHire> getNewHires() {
-		return nhService.getAllNewHires();
-//		List<NewHire> newhires = nhService.getAllNewHires();
-//		model.addAttribute("newhires", newhires);
-//		return "newhires";
-//		
+		return nhService.getAllNewHires();		
 	}
 	
-//	@RequestMapping(path = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+
 	@PostMapping("/create")
 	public void createNewHireProfile(@RequestBody NewHire newhire) {
 		nhService.createNewHire(newhire);
+		
 	}
 	
-//	@PostMapping("/create")
-//	public void createNewHireProfile(@RequestBody Map<String, String> newhire) {
-//		nhService.createNewHire(newhire);
-		
-		
-		
-	//}
+	@PutMapping("/{nhId}/add-address/{addressId}")
+	  public void NewHireAddAddress(@PathVariable Long nhId, @PathVariable Long addressId) {
+	      nhService.addAddress(nhId, addressId);
+	      System.out.println("added address");
+	     
+	  }	
 	
-	
-//	
-//	@GetMapping("/{id}")
-//	public NewHire getNewHire(@PathVariable Long nhId, Model model) {
-//		NewHire newhire = nhService.getNewHireById(nhId);
-//		model.addAttribute("newhire", newhire);
-//		return "newhire";	
-//		
-//	}
-//	
-//	@PostMapping("/{id}/update-manager/{managerId")
-//	public void addManager(@PathVariable Long nhId, @PathVariable Long managerId) {
-//		 nhService.addManager(nhId, managerId);
-//		
-//	}
-	
-	
-	
+	 @PutMapping("/{nhId}/add-dept/{deptId}")
+	  public void NewHireAddDept(@PathVariable Long nhId, @PathVariable Long deptId) {
+	      nhService.addDept(nhId, deptId);
+	      System.out.println("added dept");
+	     
+	  }	
+	 
+	 @PutMapping("/{nhId}/add-manager/{managerId}")
+	  public void NewHireAddManager(@PathVariable Long nhId, @PathVariable Long managerId) {
+	      nhService.addManager(nhId, managerId);
+	      System.out.println("added manager");
+	     
+	  }	
 
 }
