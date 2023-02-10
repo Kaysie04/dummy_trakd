@@ -1,6 +1,7 @@
 package com.kanderson.dummy_trakd.NewHire;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import com.kanderson.dummy_trakd.Address.Address;
 import com.kanderson.dummy_trakd.Dept.Dept;
@@ -20,10 +21,21 @@ public class NewHire implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
+
+	@Column(name = "employeeId")
+	private int employeeId;
 	
 	@Column(name = "name")
 	private String name;
-	
+
+	public int getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+
 	@Column(name = "email")
 	private String email;
 	
@@ -121,16 +133,31 @@ public class NewHire implements Serializable {
 	}
 
 	@Override
-	public String toString() {
-		return "NewHire [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", jobTitle="
-				+ jobTitle + ", salary=" + salary + ", address=" + address + ", manager=" + manager + ", dept=" + dept
-				+ "]";
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		NewHire newHire = (NewHire) o;
+		return employeeId == newHire.employeeId && Objects.equals(id, newHire.id) && Objects.equals(name, newHire.name) && Objects.equals(email, newHire.email) && Objects.equals(password, newHire.password) && Objects.equals(jobTitle, newHire.jobTitle) && Objects.equals(salary, newHire.salary) && Objects.equals(address, newHire.address) && Objects.equals(manager, newHire.manager) && Objects.equals(dept, newHire.dept);
 	}
-	
-	
-	
-	
-	
-	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, employeeId, name, email, password, jobTitle, salary, address, manager, dept);
+	}
+
+	@Override
+	public String toString() {
+		return "NewHire{" +
+				"id=" + id +
+				", employeeId=" + employeeId +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", jobTitle='" + jobTitle + '\'' +
+				", salary='" + salary + '\'' +
+				", address=" + address +
+				", manager=" + manager +
+				", dept=" + dept +
+				'}';
+	}
 }
