@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Enter NewHire Basic Information</h5>
-                    <form class="form-signup">
+                    <form>
 
                         <div>
                             <label for="name"></label>
@@ -60,7 +60,7 @@
                             </select>
                         </div>
                         <div>
-                            <button id ="submit-btn" class="btn" type="submit">Continue</button>
+                            <input id ="submit-btn" class="btn" type="submit" value = "Continue"></input>
                         </div>
 
                     </form>

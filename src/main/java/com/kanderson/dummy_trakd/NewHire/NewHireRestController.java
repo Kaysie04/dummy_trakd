@@ -2,13 +2,8 @@ package com.kanderson.dummy_trakd.NewHire;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -27,10 +22,29 @@ public class NewHireRestController {
 //	}
 
 
-	@PostMapping("/create-newhire")
-	public void createNewHireProfile(@RequestBody NewHire newhire) {
-		nhService.createNewHire(newhire);
-	}
+
+	/*
+	Create newhire first form information.
+	 Retrieves JSON body and saves to database
+	 */
+//	@PostMapping("/create-newhire")
+//	public void createNewHireProfile(@RequestBody NewHire newhire) {
+//		nhService.createNewHire(newhire);
+//	}
+//
+//	@PutMapping("/add-dept")
+//	@ResponseBody
+//	public String addDept(@RequestParam("nhId") Long nhId, @RequestParam("deptId") Long deptId, Model newhire, Model dept) {
+//		newhire.addAttribute("nhId", nhId);
+//		dept.addAttribute("deptId", deptId);
+//		nhService.addDept(nhId, deptId);
+//		return "add-manager";
+//
+//	}
+}
+
+
+
 	
 //	@PutMapping("/{nhId}/add-address/{addressId}")
 //	  public void NewHireAddAddress(@PathVariable Long nhId, @PathVariable Long addressId) {
@@ -53,4 +67,4 @@ public class NewHireRestController {
 //
 //	  }
 
-}
+

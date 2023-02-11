@@ -2,10 +2,7 @@ package com.kanderson.dummy_trakd.NewHire;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
 import java.util.List;
@@ -21,21 +18,47 @@ public class NewHireController {
 
     /*
       Render the create newhire form
-      when you click submit it should hit the /api/create route in NewHireRestController
+      when you click submit it hits the /api/create-newhire route in NewHireRestController
     */
-    @RequestMapping("/create-newhire")
-    public String renderCreateNewhire(){
-        return "create-newhire";
+    @GetMapping ("/create-newhire")
+
+
+
+
+    @PostMapping("/create-newhire")
+	public void createNewHireProfile(Model model, @ModelAttribute("newhire") NewHire newhire) {
+		nhService.createNewHire(newhire);
+	}
+    /*
+    Render the add-dept page that has the add-dept form
+     */
+
+
+    @RequestMapping("/add-address")
+    public String addAddress(){
+        return "add-address";
     }
+
+    @RequestMapping("/add-dept")
+    public String addDept(){
+        return "add-dept";
+    }
+
+    @RequestMapping("/add-manager")
+    public String addManager(){
+        return "add-manager";
+    }
+
+    @PutMapping("/{nhId}/add-dept/{deptId}")
+	  public void NewHireAddDept(@PathVariable Long nhId, @PathVariable Long deptId) {
+	      nhService.addDept(nhId, deptId);
+	      System.out.println("added dept");
+	  }
 
     @RequestMapping("/test")
     public String test(){
         return "test";
     }
-    
-
-
-
 
     @GetMapping("/all")
     public String getNewHires(Model model) {
@@ -48,13 +71,6 @@ public class NewHireController {
     public void NewHireAddAddress(@PathVariable Long nhId, @PathVariable Long addressId) {
         nhService.addAddress(nhId, addressId);
         System.out.println("added address");
-
-    }
-
-    @PutMapping("/{nhId}/add-dept/{deptId}")
-    public void NewHireAddDept(@PathVariable Long nhId, @PathVariable Long deptId) {
-        nhService.addDept(nhId, deptId);
-        System.out.println("added dept");
 
     }
 
