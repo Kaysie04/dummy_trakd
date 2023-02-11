@@ -59,7 +59,7 @@ function saveNewHire(){
         "salary": selectedSalary
     }
 
-    let url = "http://localhost:8080/newhire/create"
+    let url = "http://localhost:8080/api/create-newhire"
 
     fetch(url, {
         method:"POST",
